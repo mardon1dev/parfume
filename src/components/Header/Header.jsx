@@ -8,9 +8,12 @@ import User from "../../assets/images/icons/user.svg"
 import Store from "../../assets/images/icons/store.svg"
 
 import "./Header.css"
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
+
+    const [menu, setMenu] = useState(false);
+
   return (
     <header className='site-header pt-4 pb-1'>
         <div className='container'>
@@ -62,6 +65,20 @@ const Header = () => {
                         </div>               
                     </div>
                 </div>
+                {
+                    menu ? 
+                    <>
+                        <div className="side-menu">
+                            <div className="side-menu--close close">
+                                <img className="close-image" src={Close} alt="Close" />
+                            </div>
+                            
+                        </div>
+                    </> : 
+                    <>
+                    
+                    </>
+                }
             </div>
         </div>
     </header>
